@@ -44,7 +44,12 @@ public class Lib {
             for (Book book : books) {
                 System.out.println();
                 System.out.print(book.getData());
+                System.out.println();
             }
         }
+    }
+
+    public double getAmount() {
+      return amount;
     }
 }

@@ -23,4 +23,20 @@ public class Book {
                "Preço: " + price + "\n" +
                "Quantidade: " + amount;
     }
+
+    public void setAmount(int amount) {
+      this.amount = amount;
+    }
+
+    public void setAuthor(String author) {
+      this.author = author;
+    }
+
+    public void setPrice(double price) {
+      this.price = price;
+    }
+
+    public void setTitle(String title) {
+      this.title = title;
+    }
 }

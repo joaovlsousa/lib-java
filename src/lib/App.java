@@ -74,18 +74,23 @@ public class App {
                         break;
                 
                     case 2:
-                        admin.listBooks();
+                        lib.listBooks();
                         break;
                     case 3:
+                        admin.searchBook();
                         break;
 
                     case 4:
+                        admin.updateBook();
                         break;
 
                     case 5:
+                        admin.deleteBook();
                         break;
 
                     case 6:
+                        System.out.println();
+                        System.out.println("Saldo da biblioteca: " + lib.getAmount());
                         break;
                 }
             } while (op != 0);

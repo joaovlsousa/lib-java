@@ -42,7 +42,95 @@ public class Admin extends People {
       lib.registerBook(book);
     }
 
-    public void listBooks() {
-      lib.listBooks();
+    public void searchBook() {
+        String title;
+
+        System.out.println();
+        System.out.print("Informe o titulo do livro: ");
+        title = strScann.nextLine();
+
+        Book book = lib.getBook(title);
+
+        if (book == null) {
+            System.out.println();
+            System.out.print("Nao foi possivel encontrar este livro!");
+        } else {
+          System.out.println();
+          System.out.println(book.getData());
+        }
+    }
+
+    public void updateBook() {
+        String title;
+
+        System.out.println();
+        System.out.print("Informe o titulo do livro: ");
+        title = strScann.nextLine();
+
+        Book book = lib.getBook(title);
+
+        if (book == null) {
+            System.out.println();
+            System.out.print("Nao foi possivel encontrar este livro!");
+        } else {
+            String op;
+    
+            System.out.println();
+            System.out.print("Quer editar o titulo do livro? (s/n) ");
+            op = strScann.nextLine();
+    
+            if (op.toLowerCase().equals("s")) {
+                System.out.print("Informe um novo titulo: ");
+                book.setTitle(strScann.nextLine());
+            }
+
+            System.out.println();
+            System.out.print("Quer editar o autor do livro? (s/n) ");
+            op = strScann.nextLine();
+    
+            if (op.toLowerCase().equals("s")) {
+                System.out.print("Informe um novo autor: ");
+                book.setAuthor(strScann.nextLine());
+            }
+
+            System.out.println();
+            System.out.print("Quer editar o preco do livro? (s/n) ");
+            op = strScann.nextLine();
+    
+            if (op.toLowerCase().equals("s")) {
+                System.out.print("Informe um novo preco: ");
+                book.setPrice(numScann.nextFloat());
+            }
+
+            System.out.println();
+            System.out.print("Quer editar a quantidade de livros? (s/n) ");
+            op = strScann.nextLine();
+    
+            if (op.toLowerCase().equals("s")) {
+                System.out.print("Informe uma nova quantidade: ");
+                book.setAmount(numScann.nextInt());
+            }
+        }
+    }
+
+    public void deleteBook() {
+        String title;
+
+        System.out.println();
+        System.out.print("Informe o titulo do livro: ");
+        title = strScann.nextLine();
+
+        Book book = lib.getBook(title);
+
+        if (book == null) {
+            System.out.println();
+            System.out.print("Nao foi possivel encontrar este livro!");
+        } else {
+            if (lib.deleteBook(book)) {
+              System.out.println("O livro foi excluido com sucesso!");
+            } else {
+              System.out.println("Falha ao excluir o livro!");
+            }
+        }
     }
 }
