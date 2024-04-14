@@ -3,6 +3,7 @@ package lib;
 import java.util.Scanner;
 
 import lib.models.Admin;
+import lib.models.Client;
 import lib.models.Lib;
 
 public class App {
@@ -47,6 +48,45 @@ public class App {
 
         System.out.print("Escolha uma opção: ");
     } 
+
+    public static void clientActions(
+        String name,
+        String cpf,
+        Lib lib,
+        Scanner strScann,
+        Scanner numScann
+    ) {
+        Client client = new Client(name, cpf, 60);
+        
+        int op;
+        
+        do {
+            clientMenu();
+            op = numScann.nextInt();
+
+            switch (op) {
+                case 1:
+                    lib.listBooks();    
+                    break;
+
+                case 2:
+                    client.searchBook(lib);
+                    break;
+
+                case 3:
+                    client.buyBook(lib);
+                    break;
+                
+                case 4:
+                    System.out.println("Seu saldo é de R$"+ client.getAmount());
+                    break;
+
+                default:
+                    break;
+            }
+        } while(op != 0);
+
+    }
 
     public static void adminActions(
         String name,
@@ -122,7 +162,7 @@ public class App {
 
             switch (op) {
                 case 1:
-                    
+                    clientActions(name, cpf, lib, strScann, numScann);
                     break;
             
                 case 2:
