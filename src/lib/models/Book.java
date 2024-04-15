@@ -14,29 +14,43 @@ public class Book {
     }
 
     public String getTitle() {
-      return title;
+        return title;
+    }
+
+    public int getAmount(){
+        return amount;
+    }
+
+    public double getPrice(){
+        return price;
     }
 
     public String getData() {
-        return "Titulo: " + title + "\n" +
+        return "-------------------- \n" + 
+               "Titulo: " + title + "\n" +
                "Autor: " + author + "\n" +
-               "Preço: " + price + "\n" +
-               "Quantidade: " + amount;
+               "Preço: R$" + price + "\n" +
+               "Quantidade: " + amount + "\n" +
+               "-------------------- \n";
     }
 
     public void setAmount(int amount) {
-      this.amount = amount;
+        this.amount = amount;
     }
 
+    
     public void setAuthor(String author) {
-      this.author = author;
+        this.author = author;
     }
-
+    
     public void setPrice(double price) {
-      this.price = price;
+        this.price = price;
+    }
+    
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    public void setTitle(String title) {
-      this.title = title;
-    }
+
+
 }
