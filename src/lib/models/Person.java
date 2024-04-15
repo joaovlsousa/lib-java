@@ -1,10 +1,10 @@
 package lib.models;
 
-public class People {
+public class Person {
     protected String name;
     protected String cpf;
 
-    public People(String name, String cpf) {
+    public Person(String name, String cpf) {
         super();
 
         this.name = name;

@@ -2,7 +2,7 @@ package lib.models;
 
 import java.util.Scanner;
 
-public class Admin extends People {
+public class Admin extends Person {
     private String password;
     private Lib lib;
 
@@ -22,7 +22,7 @@ public class Admin extends People {
 
     public void registerBook() {
       String title, author;
-      double price;
+      float price;
       int amount;
 
       System.out.println();
@@ -33,7 +33,7 @@ public class Admin extends People {
       author = strScann.nextLine();
 
       System.out.print("Informe o preço: ");
-      price = numScann.nextDouble();
+      price = numScann.nextFloat();
 
       System.out.print("Informe a quantidade de livros: ");
       amount = numScann.nextInt();

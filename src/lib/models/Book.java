@@ -3,10 +3,10 @@ package lib.models;
 public class Book {
     private String title;
     private String author;
-    private double price;
+    private float price;
     private int amount;
 
-    public Book(String title, String author, double price, int amount) {
+    public Book(String title, String author, float price, int amount) {
         this.title = title;
         this.author = author;
         this.price = price;
@@ -21,7 +21,7 @@ public class Book {
         return amount;
     }
 
-    public double getPrice(){
+    public float getPrice(){
         return price;
     }
 
@@ -43,7 +43,7 @@ public class Book {
         this.author = author;
     }
     
-    public void setPrice(double price) {
+    public void setPrice(float price) {
         this.price = price;
     }
     

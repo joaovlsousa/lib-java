@@ -42,6 +42,7 @@ public class App {
         System.out.println("2 - Buscar um livro");
         System.out.println("3 - Comprar um novo livro");
         System.out.println("4 - Ver saldo em conta");
+        System.out.println("5 - Depositar dinheiro na conta");
         System.out.println("0 - Sair");
         System.out.println("-----------------------------");
         System.out.println("");
@@ -56,7 +57,7 @@ public class App {
         Scanner strScann,
         Scanner numScann
     ) {
-        Client client = new Client(name, cpf, 60);
+        Client client = new Client(name, cpf);
         
         int op;
         
@@ -78,7 +79,11 @@ public class App {
                     break;
                 
                 case 4:
-                    System.out.println("Seu saldo é de R$"+ client.getAmount());
+                    System.out.println("Seu saldo é de R$"+ client.getBalance());
+                    break;
+                
+                case 5:
+                    client.depositMoney();
                     break;
 
                 default:
@@ -130,7 +135,7 @@ public class App {
 
                     case 6:
                         System.out.println();
-                        System.out.println("Saldo da biblioteca: " + lib.getAmount());
+                        System.out.println("Saldo da biblioteca: " + lib.getbalance());
                         break;
                 }
             } while (op != 0);

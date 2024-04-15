@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Lib {
     private List<Book> books;
-    private double amount;
+    private float balance;
 
     public Lib() {
         this.books = new ArrayList<Book>();
@@ -42,11 +42,11 @@ public class Lib {
         }
     }
 
-    public double getAmount() {
-      return amount;
+    public float getbalance() {
+      return balance;
     }
 
-    public void setAmount(double amount){
-        this.amount = amount;
+    public void setbalance(float balance) {
+        this.balance = balance;
     }
 }
