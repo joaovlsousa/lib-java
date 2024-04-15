@@ -145,7 +145,7 @@ public class App {
         Scanner strScann = new Scanner(System.in);
         Scanner numScann = new Scanner(System.in);
 
-        Lib lib = new Lib("Biblioteca UEPB");
+        Lib lib = new Lib();
         String name, cpf;
         int op;
 

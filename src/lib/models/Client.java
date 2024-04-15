@@ -18,7 +18,7 @@ public class Client extends People {
         this.books = new ArrayList<Book>();
     }
 
-    public double getAmount(){
+    public double getAmount() {
         return amount;
     }
 
@@ -40,7 +40,7 @@ public class Client extends People {
 
     }
 
-    public void buyBook(Lib lib){
+    public void buyBook(Lib lib) {
         String title;
         System.out.print("Informe o titulo do livro: ");
         title = strScann.nextLine();

@@ -4,12 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Lib {
-    private String name;
     private List<Book> books;
     private double amount;
 
-    public Lib(String name) {
-        this.name = name;
+    public Lib() {
         this.books = new ArrayList<Book>();
     } 
 
