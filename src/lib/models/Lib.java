@@ -4,19 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Lib {
-    private String name;
     private List<Book> books;
     private double amount;
-    private Admin admin;
 
-    public Lib(String name) {
-        this.name = name;
+    public Lib() {
         this.books = new ArrayList<Book>();
-    }
-
-    public void setAdmin(Admin admin) {
-        this.admin = admin;
-    }
+    } 
 
     public void registerBook(Book book) {
         books.add(book);
@@ -51,5 +44,9 @@ public class Lib {
 
     public double getAmount() {
       return amount;
+    }
+
+    public void setAmount(double amount){
+        this.amount = amount;
     }
 }
