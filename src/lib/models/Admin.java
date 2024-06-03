@@ -2,7 +2,9 @@ package lib.models;
 
 import java.util.Scanner;
 
-public class Admin extends Person {
+import lib.interfaces.AdminActions;
+
+public class Admin extends Person implements AdminActions {
     private String password;
     private Lib lib;
 
@@ -20,6 +22,19 @@ public class Admin extends Person {
         return password;
     }
 
+    public String getData(boolean getSensiviteData) {
+        if (!getSensiviteData) {
+            return super.getData();
+        }
+
+        return "-------------------- \n" + 
+        "Nome: " + name + "\n" +
+        "CPF: " + cpf + "\n" +
+        "Senha: " + password + "\n" +
+        "-------------------- \n";
+    }
+
+    @Override
     public void registerBook() {
       String title, author;
       float price;
@@ -42,6 +57,7 @@ public class Admin extends Person {
       lib.registerBook(book);
     }
 
+    @Override
     public void searchBook() {
         String title;
 
@@ -60,6 +76,7 @@ public class Admin extends Person {
         }
     }
 
+    @Override
     public void updateBook() {
         String title;
 
@@ -113,6 +130,7 @@ public class Admin extends Person {
         }
     }
 
+    @Override
     public void deleteBook() {
         String title;
 

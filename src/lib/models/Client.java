@@ -2,7 +2,9 @@ package lib.models;
 
 import java.util.Scanner;
 
-public class Client extends Person {
+import lib.interfaces.ClientActions;
+
+public class Client extends Person implements ClientActions {
     private float balance;
 
     Scanner strScann = new Scanner(System.in);
@@ -18,6 +20,16 @@ public class Client extends Person {
         return balance;
     }
 
+    @Override
+    public String getData() {
+        return "-------------------- \n" + 
+               "Nome: " + name + "\n" +
+               "CPF: " + cpf + "\n" +
+               "Saldo: R$" + balance + "\n" +
+               "-------------------- \n";
+    }
+
+    @Override
     public void depositMoney() {
         float balance;
 
@@ -27,6 +39,7 @@ public class Client extends Person {
         this.balance += balance;
     }
 
+    @Override
     public void searchBook(Lib lib) {
         String title;
 
@@ -46,6 +59,7 @@ public class Client extends Person {
 
     }
 
+    @Override
     public void buyBook(Lib lib) {
         String title;
 

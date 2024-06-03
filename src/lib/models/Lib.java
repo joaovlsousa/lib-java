@@ -1,24 +1,28 @@
 package lib.models;
 
 import java.util.ArrayList;
-import java.util.List;
 
-public class Lib {
-    private List<Book> books;
+import lib.interfaces.LibRepository;
+
+public class Lib implements LibRepository {
+    private ArrayList<Book> books;
     private float balance;
 
     public Lib() {
         this.books = new ArrayList<Book>();
     } 
 
+    @Override
     public void registerBook(Book book) {
         books.add(book);
     }
 
+    @Override
     public boolean deleteBook(Book book) {
         return books.remove(book);
     }
 
+    @Override
     public Book getBook(String title) {
         for (Book book : books) {
             if (book.getTitle().toLowerCase().equals(title.toLowerCase())) {
@@ -29,6 +33,7 @@ public class Lib {
         return null;
     }
 
+    @Override
     public void listBooks() {
         if (books.size() == 0) {
             System.out.println();

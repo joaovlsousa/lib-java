@@ -1,6 +1,6 @@
 package lib.models;
 
-public class Person {
+public abstract class Person {
     protected String name;
     protected String cpf;
 
@@ -9,5 +9,12 @@ public class Person {
 
         this.name = name;
         this.cpf = cpf;
+    }
+
+    public String getData() {
+        return "-------------------- \n" + 
+               "Nome: " + name + "\n" +
+               "CPF: " + cpf + "\n" +
+               "-------------------- \n";
     }
 }
