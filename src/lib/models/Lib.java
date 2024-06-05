@@ -2,9 +2,9 @@ package lib.models;
 
 import java.util.ArrayList;
 
-import lib.interfaces.LibRepository;
+import lib.interfaces.CRUD;
 
-public class Lib implements LibRepository {
+public class Lib implements CRUD<Book> {
     private ArrayList<Book> books;
     private float balance;
 
@@ -13,17 +13,17 @@ public class Lib implements LibRepository {
     } 
 
     @Override
-    public void registerBook(Book book) {
+    public void create(Book book) {
         books.add(book);
     }
 
     @Override
-    public boolean deleteBook(Book book) {
+    public boolean delete(Book book) {
         return books.remove(book);
     }
 
     @Override
-    public Book getBook(String title) {
+    public Book get(String title) {
         for (Book book : books) {
             if (book.getTitle().toLowerCase().equals(title.toLowerCase())) {
                 return book;
@@ -34,7 +34,7 @@ public class Lib implements LibRepository {
     }
 
     @Override
-    public void listBooks() {
+    public void list() {
         if (books.size() == 0) {
             System.out.println();
             System.out.println("A coleção está vazia!");
@@ -48,7 +48,7 @@ public class Lib implements LibRepository {
     }
 
     public float getbalance() {
-      return balance;
+        return balance;
     }
 
     public void setbalance(float balance) {

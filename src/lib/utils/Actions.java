@@ -21,7 +21,7 @@ public class Actions {
 
             switch (op) {
                 case 1:
-                    lib.listBooks();    
+                    lib.list();    
                     break;
 
                 case 2:
@@ -71,7 +71,7 @@ public class Actions {
                         break;
                 
                     case 2:
-                        lib.listBooks();
+                        lib.list();
                         break;
                     case 3:
                         admin.searchBook();

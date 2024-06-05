@@ -2,9 +2,7 @@ package lib.models;
 
 import java.util.Scanner;
 
-import lib.interfaces.AdminActions;
-
-public class Admin extends Person implements AdminActions {
+public class Admin extends Person {
     private String password;
     private Lib lib;
 
@@ -34,7 +32,6 @@ public class Admin extends Person implements AdminActions {
         "-------------------- \n";
     }
 
-    @Override
     public void registerBook() {
       String title, author;
       float price;
@@ -54,10 +51,9 @@ public class Admin extends Person implements AdminActions {
       amount = numScann.nextInt();
 
       Book book = new Book(title, author, price, amount);
-      lib.registerBook(book);
+      lib.create(book);
     }
 
-    @Override
     public void searchBook() {
         String title;
 
@@ -65,7 +61,7 @@ public class Admin extends Person implements AdminActions {
         System.out.print("Informe o titulo do livro: ");
         title = strScann.nextLine();
 
-        Book book = lib.getBook(title);
+        Book book = lib.get(title);
 
         if (book == null) {
             System.out.println();
@@ -76,7 +72,6 @@ public class Admin extends Person implements AdminActions {
         }
     }
 
-    @Override
     public void updateBook() {
         String title;
 
@@ -84,7 +79,7 @@ public class Admin extends Person implements AdminActions {
         System.out.print("Informe o titulo do livro: ");
         title = strScann.nextLine();
 
-        Book book = lib.getBook(title);
+        Book book = lib.get(title);
 
         if (book == null) {
             System.out.println();
@@ -130,7 +125,6 @@ public class Admin extends Person implements AdminActions {
         }
     }
 
-    @Override
     public void deleteBook() {
         String title;
 
@@ -138,13 +132,13 @@ public class Admin extends Person implements AdminActions {
         System.out.print("Informe o titulo do livro: ");
         title = strScann.nextLine();
 
-        Book book = lib.getBook(title);
+        Book book = lib.get(title);
 
         if (book == null) {
             System.out.println();
             System.out.print("Nao foi possivel encontrar este livro!");
         } else {
-            if (lib.deleteBook(book)) {
+            if (lib.delete(book)) {
               System.out.println("O livro foi excluido com sucesso!");
             } else {
               System.out.println("Falha ao excluir o livro!");
